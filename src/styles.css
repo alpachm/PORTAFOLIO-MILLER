@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --purple: #8E7BEF;
+    --blue: #5D3BEF;
+    --marfil: #F9F6FF;
+    --veryBlack: #222222;
+    --black: #423F40;
+    --white: #ffffff;
+    --beige: #F9F5F2;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --------------REUTILIZABLES */
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.desktop {
+    display: none;
+}
+
+.container {
+    background: #ffffff;
+}
+
+/* --------------HEADER */
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .mobile {
+    cursor: pointer;
+
+    position: relative;
+}
+
+header .desktop {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1rem;
+    background: var(--purple);
+    width: 100%;
+    padding: 1rem;
+
+    position: absolute;
+    top: -100%;
+    right: 0;
+
+    transition: top .2s;
+}
+
+header .show__menu {
+    top: 0;
+}
+
+header .desktop a {
+    text-decoration: none;
+    color: var(--white)
+}
+
+/* --------------HERO */
+
+.main__container {
+    display: grid;
+    gap: 3rem;
+}
+
+.main__contents {
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main__contents h1 {
+    font-size: 3.12rem;
+}
+
+.main__contents p {
+    color: var(--black);
+}
+
+.main__icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.btn {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white)
+}
+
+.btn svg {
+    transform: scale(.4);
+}
+
+/* --------------ABOUT ME */
+
+.about__me {
+    padding: 4rem 1rem;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+}
+
+.about__me h3 {
+    font-size: 1.5rem;
+}
+
+/* --------------SKILLS */
+
+.skills {
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.skills h3 {
+    font-size: 1.5rem;
+}
+
+.skills__contents {
+    display: grid;
+    gap: 2rem;
+}
+
+.skills__box {
+    background: var(--marfil);
+    text-align: left;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.skills__box span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+}
+
+.skills img {
+    width: 18px;
+}
+
+/* --------------EXPERIENCE */
+
+.experience {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.experience h3 {
+    font-size: 1.5rem;
+}
+
+.experience__contents {
+    display: grid;
+    gap: 3rem;
+}
+
+.experience__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.left__text {
+    display: grid;
+    gap: .3rem;
+}
+
+.left__text span,
+.experience__box>span {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.left__text p:nth-child(2) {
+    color: var(--black);
+    font-size: .8rem;
+}
+
+.left__text p:nth-child(3) {
+    color: var(--black);
+    font-size: .7rem;
+}
+
+/* --------------PORTAFOLIO */
+
+.portafolio {
+    padding: 4rem 1rem;
+    text-align: center;
+    display: grid;
+    gap: 2rem;
+}
+
+.portafolio h3 {
+    font-size: 1.5rem;
+}
+
+.portafolio__images {
+    display: grid;
+    gap: 2rem;
+}
+
+/* --------------CONTACT */
+
+.contact {
+    padding: 2rem 1rem;
+    text-align: center;
+    display: grid;
+    gap: 2rem
+}
+
+.contact h3 {
+    font-size: 1.5rem;
+}
+
+.contact__contents {
+    display: grid;
+    gap: 2rem;
+}
+
+.contact__box {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: .5rem;
+}
+
+.contact__box span {
+    font-weight: 600;
+}
+
+.contact__box p {
+    color: var(--black);
+}
+
+/* --------------FOOTER */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    color: var(--purple);
+}
+
+/* --------------MEDIA QUERIES */
+
+@media (min-width:800px) {
+    * {
+        font-size: 18px;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    header,
+    .main__container,
+    .about__me,
+    .skills,
+    .experience,
+    .portafolio,
+    .contact {
+        width: 90%;
+        margin: auto;
+    }
+
+    header .desktop {
+        position: relative;
+
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        background: none;
+        gap: 2rem;
+    }
+
+    header .desktop a {
+        color: var(--veryBlack);
+    }
+
+    header .desktop a:hover {
+        color: var(--purple);
+    }
+
+    .main__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main__contents {
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .main__contents h1 {
+        font-size: 5rem;
+    }
+
+    .main__contents p {
+        font-size: 2rem;
+    }
+
+    .main__icons {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 4rem;
+        padding-left: 1rem;
+    }
+
+    .main__icons svg {
+        transform: scale(2);
+    }
+
+    .skills__contents {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .experience__contents {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portafolio__images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact__contents {
+        grid-template-columns: 1fr 1fr;
+    }
+}
